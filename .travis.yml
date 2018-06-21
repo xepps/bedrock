@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  "node"
+cache:
+  directories:
+    - $HOME/.npm
+addons:
+  apt:
+    packages:
+      - docker-ce
+services:
+  - docker
+script:
+  - npm run build
+  - npm test
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker build -t bedrock .;
+    echo "$DOCKER_PASSWORD" | docker login --username=_ --password-stdin registry.heroku.com;
+    docker tag bedrock registry.heroku.com/xepps-bedrock/web;
+    docker push registry.heroku.com/xepps-bedrock/web;
+    fi
