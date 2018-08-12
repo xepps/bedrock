@@ -1,0 +1,33 @@
+.search-page {
+    background: rgb(243, 206, 86);
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    max-width: 768px;
+    margin: 32px auto;
+}
+
+.search-page__title {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.search__label,
+.results__none-found {
+    color: #444;
+    display: block;
+    font-size: 0.875em;
+    line-height: 30px;
+    width: 100%;
+}
+
+.search__input {
+    border: 1px solid rgb(169, 169, 169);
+    box-sizing: border-box;
+    display: block;
+    font-size: 0.813em;
+    padding: 12px 8% 12px 2%;
+    width: 100%;
+}
