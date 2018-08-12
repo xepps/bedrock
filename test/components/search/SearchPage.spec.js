@@ -4,8 +4,8 @@ import { mount } from 'enzyme';
 import fetchMock from 'fetch-mock';
 
 import SearchPage from '../../../src/components/search/SearchPage';
-import Search from '../../../src/components/common/Search';
-import Results from '../../../src/components/common/Results';
+import Search from '../../../src/components/search/Search';
+import Results from '../../../src/components/search/Results';
 
 import requestResponse from '../../__mocks__/man.json';
 

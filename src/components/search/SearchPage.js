@@ -1,8 +1,8 @@
 import 'whatwg-fetch';
 import React, { Component } from 'react';
 
-import Search from '../common/Search';
-import Results from '../common/Results';
+import Search from './Search';
+import Results from './Results';
 
 class SearchPage extends Component {
     constructor(props) {
