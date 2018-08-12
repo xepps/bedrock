@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Search from './Search';
 import Results from './Results';
 
+import './search.css';
+
 class SearchPage extends Component {
     constructor(props) {
         super(props);
@@ -21,8 +23,8 @@ class SearchPage extends Component {
                 `https://cors.io/?https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=6&solrTerm=${value}`
             )
                 .then(res => res.json())
-                .then(res => res.results.docs)
-                .then(searchResults => this.setState({ searchResults }));
+                .then(res => res.results)
+                .then(res => this.setState({ searchResults: res.docs, numFound: res.numFound }));
         } else {
             this.setState({ searchResults: null });
         }
@@ -31,9 +33,11 @@ class SearchPage extends Component {
     render() {
         return (
             <div className="search-page">
-                <h1 className="search-page__header">Where are you going?</h1>
+                <h2 className="search-page__title">Where are you going?</h2>
                 <Search searchUpdated={this.searchUpdated} />
-                {this.state.searchResults ? <Results resultsList={this.state.searchResults} /> : null}
+                {this.state.searchResults ? (
+                    <Results numFound={this.state.numFound} resultsList={this.state.searchResults} /> 
+                ) : null}
             </div>
         );
     }

@@ -29,7 +29,7 @@ describe('The search page', () => {
     });
 
     it('should have a header', () => {
-        expect(searchPage.find('.search-page__header').text()).toEqual('Where are you going?');
+        expect(searchPage.find('.search-page__title').text()).toEqual('Where are you going?');
     });
 
     it('should contain the search box', () => {
