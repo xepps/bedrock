@@ -4,12 +4,6 @@ node_js:
 cache:
   directories:
     - $HOME/.npm
-addons:
-  apt:
-    packages:
-      - docker-ce
-services:
-  - docker
 script:
   - npm run build
   - npm test
