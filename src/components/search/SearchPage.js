@@ -36,7 +36,7 @@ class SearchPage extends Component {
                 <h2 className="search-page__title">Where are you going?</h2>
                 <Search searchUpdated={this.searchUpdated} />
                 {this.state.searchResults ? (
-                    <Results numFound={this.state.numFound} resultsList={this.state.searchResults} /> 
+                    <Results numFound={this.state.numFound} resultsList={this.state.searchResults} />
                 ) : null}
             </div>
         );
